@@ -11,9 +11,7 @@ if(isset($_POST['submit']))
                        $sql2="INSERT INTO carts SET
                            food_id='$food_id',
                            quandity=$sqlty,
-                           customer_id='$customer_id'
-                       
-                       ";
+                           customer_id='$customer_id'";
                    
                     //   echo $sql2; 
                     //    exit;

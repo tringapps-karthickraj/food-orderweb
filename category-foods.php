@@ -35,7 +35,7 @@ include('header.php');
             <ul id="menu-flters">
 
             <?php
-            $sqlcat="SELECT * FROM category WHERE active='Yes'";
+            $sqlcat="SELECT * FROM category WHERE active=1";
                  
                  $cat=mysqli_query($conn, $sqlcat);
 

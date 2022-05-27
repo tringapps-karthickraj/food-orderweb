@@ -12,12 +12,8 @@ include('./config/signupconstant.php');
         $_SESSION['user'] = $email;
         $_SESSION['role'] = $row['role'];
         $_SESSION['id'] = $row['id'];
-          if($_SESSION['role'] == 1){
-            header('location:'.SITEURL.'admin/index.php');
-          }else{
-            header('location:home.php');
-          }
-          
+      
+          header('location:home.php');
           //$_SESSION['login'] = "<div class='success'>Login Successful.</div>";
            // To check teh user is logged in or not and logout will unset it
           
