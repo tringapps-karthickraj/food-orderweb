@@ -76,7 +76,7 @@ include('header.php');
               $image_name=$row['image_name'];
               ?>
                 <div class="col-lg-6 menu-item filter-starters">
-    <img src="../images/food/<?php echo $image_name;?>" class="menu-img" alt="">
+    <img src="./images/food/<?php echo $image_name;?>" class="menu-img" alt="">
     <div class="menu-content">
       <a href="#"><?php echo $title; ?></a><span>₹<?php echo $price; ?></span>
     </div>

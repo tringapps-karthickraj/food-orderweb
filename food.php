@@ -82,7 +82,7 @@ if($_SESSION['role'] == 2){
                         <div class="col-lg-6 menu-item filter-starters">
                         <div class="row">
 <div class="col-lg-2">
-<img src="../images/food/<?php echo $image_name;?>" class="menu-img" alt="">
+<img src="./images/food/<?php echo $image_name;?>" class="menu-img" alt="">
 </div>
 <div class="col-lg-10">
 

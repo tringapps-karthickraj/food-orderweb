@@ -30,7 +30,7 @@ else
         <form action="addToCartUpdate.php" method="post"  class="php-email-form" data-aos="fade-up" data-aos-delay="100">
           <div class="row">
           <div class="col-lg-4 col-md-6 form-group mt-3">
-        <div><img src="../images/food/<?php echo $image_name;?>" class="order-img" alt=""></div>
+        <div><img src="./images/food/<?php echo $image_name;?>" class="order-img" alt=""></div>
           
           <div class="ml-1">
               <div>
