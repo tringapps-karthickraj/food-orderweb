@@ -65,7 +65,8 @@ if($_SESSION['role'] == 2){
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
         <?php 
-              $sql="SELECT * FROM food";
+              $sql="SELECT food.id as id, food.title as title, food.price as price,
+              food.description as description,food.featured as featured, food.active as active, food.image_name as image_name, category.title as cat_title FROM food INNER JOIN category on food.category_id = category.id";
               $res=mysqli_query($conn, $sql);
               $count=mysqli_num_rows($res);
               if($count>0)
@@ -90,22 +91,47 @@ if($_SESSION['role'] == 2){
             <div class="menu-content">
               <a href="#"><?php echo $title; ?></a><span>₹<?php echo $price; ?></span>
             </div>
+            <?php if($_SESSION['role']==1){?>
+            <div class="foodcategory">
+            Category: <?php echo $row['cat_title']; ?>
+         </div>
+         <?php } ?>
             <div class="menu-ingredients">
             <?php echo $description; ?>
             </div>
             
-            <div class="textend">
             <?php if($_SESSION['role']==2){ ?>
+            <div class="textend">
+
               <button class="btn-order"><a style="color: white;" href="addToCarts.php?food_id=<?php echo $id; ?>">Add</a></button>
+            </div>
+              
               <?php
                    }elseif($_SESSION['role']==1){
                      ?>
-                     <button class="btn-order"><a style="color: white;" href="addToCarts.php?food_id=<?php echo $id; ?>">Update</a></button>
+                     <div class="row">
+                       <div class="col-lg-4">
+                         <?php if($row['featured']==1){
+                           ?>
+                       <p class="foodfeatured">Featured: Yes</p>
+                       <?php }else{ ?>
+                       <p class="foodfeatured changecolor">Featured: No</p>
+                       <?php }?>
+                       </div><div class="col-lg-4">
+                       <?php if($row['active']==1){
+                           ?>
+                       <p class="foodfeatured active">Active: Yes</p>
+                       <?php }else{ ?>
+                       <p class="foodfeatured active changecolor">Active: No</p>
+                       <?php }?>
+                       </div><div class="col-lg-4">
+                     <button class="btn-order"><a style="color: white;" href="update-food.php?id=<?php echo $id; ?>">Update</a></button>
+                     </div> 
+                    </div>
                      <?php
                    }
             ?>
               
-            </div>
             
                         </div>
                         </div>

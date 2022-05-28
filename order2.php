@@ -4,7 +4,7 @@ if(isset($_POST['submit']))
                    {
                        
                        $total= $_POST['totalall'];
-                       $status="Ordered";
+                       $status=0;
                        $customer_name=$_POST['name'];
                        $customer_contact=$_POST['contact'];
                        $customer_email=$_POST['email'];

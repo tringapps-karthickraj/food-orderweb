@@ -62,7 +62,7 @@ include('header.php');
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
 <?php 
-     $sql2="SELECT * FROM food WHERE category_id=$category_id";
+     $sql2="SELECT * FROM food WHERE category_id=$category_id && active=1";
       $res=mysqli_query($conn, $sql2);
       $count=mysqli_num_rows($res);
       if($count>0)

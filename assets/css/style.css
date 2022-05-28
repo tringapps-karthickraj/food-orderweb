@@ -1587,3 +1587,46 @@ section {
 .radioh{
 height: 12px !important;
 }
+.foodfeatured{
+  border: 0;
+    background: green;
+    padding: 3px 7px;
+    color: #fff;
+    transition: 0.4s;
+    font-size: 14px;
+    border-radius: 2px 16px 2px 12px;
+    width: 75%;
+}
+.foodfeatured.active{
+  padding: 3px 17px;
+}
+
+.changecolor{
+  background: red;
+}
+.category{
+  text-align: center;
+    margin-bottom: 15px;
+}
+.foodcategory{
+  background: #870e0e;
+    text-align: center;
+    padding: 5px;
+    width: 40%;
+    margin: auto;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.admintablefont{
+  font-size: 15px;
+    margin-bottom: 15px;
+}
+.btn-admin{
+  background: #cda45e;
+    border: 0;
+    padding: 5px 11px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+    font-size: 13px;
+}

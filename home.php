@@ -80,7 +80,7 @@ if($_SESSION['role']==2){
             <?php 
         //Create sql query to get the total revuneue generated
         //Aggregate function in sql
-        $sql4="SELECT SUM(total) AS Total FROM myorders WHERE status='Delivered'";
+        $sql4="SELECT SUM(total) AS Total FROM myorders WHERE status=2";
         //Eexcute the query 
         $res4=mysqli_query($conn, $sql4);
         //Get thevalues 

@@ -8,7 +8,7 @@ include('header.php');
           <h2>Add Food</h2>
         </div>
 
-        <form action="add-foodins.php" method="post"  class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+        <form action="add-foodins.php" method="post"  class="php-email-form" data-aos="fade-up" data-aos-delay="100" enctype="multipart/form-data">
           <div class="row">
             <div class="col-lg-6 col-md-6 form-group">
                 
@@ -60,25 +60,25 @@ include('header.php');
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
               <div class="mt-2">
-              Featured:<input type="radio" class="radioh" name="featured" value="1"><span>Yes</span>
-                    <input type="radio" class="radioh" name="featured" value="0"><span>No</span>
+              Featured:<input type="radio" class="radioh" name="featured" value="1" required><span>Yes</span>
+                    <input type="radio" class="radioh" name="featured" value="0" required><span>No</span>
               </div>
             
             </div> 
             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
               <div class="mt-2">
-              Active:<input type="radio" class="radioh" name="active" value="1"><span>Yes</span>
-                    <input type="radio" class="radioh" name="active" value="0"><span>No</span>
+              Active:<input type="radio" class="radioh" name="active" value="1" required><span>Yes</span>
+                    <input type="radio" class="radioh" name="active" value="0" required><span>No</span>
               </div>
             
             </div> 
             <div class="col-lg-12 col-md-6 form-group mt-3 mt-md-0">
-            <textarea name="description" class="form-control" cols="30" rows="5" placeholder="Description of the Food."></textarea>
+            <textarea name="description" class="form-control" cols="30" rows="5" required placeholder="Description of the Food."></textarea>
+            </div>
+            <div class="col-lg-12 col-md-6 form-group mt-3 mt-md-0">
+            <input type="file"  name="image"> 
             </div>
           </div>
-          <!-- <div class="form-group mt-3">
-          <input type="file" class="form-control" name="image"> 
-          </div> -->
           <div class="row textend">
             <div class="col-lg-7">  
             <button type="submit" name="submit">Add</button>
@@ -87,14 +87,6 @@ include('header.php');
         </form>
 
       </div>
-      <script>
-var initialPrize = document.getElementById("prize-food").innerHTML;
-function prizeDisplay(ev){
-    document.getElementById("prize-food").innerHTML = initialPrize * ev.target.value;
-}
-
-
-        </script>
     </section>
 
 <?php

@@ -71,9 +71,17 @@ include('./config/constant.php');
           <li><a class="nav-link scrollto" href="food.php">Menu</a></li>
           <!-- <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
           <li><a class="nav-link scrollto" href="#events">Events</a></li> -->
+          <?php if($_SESSION['role']==2){ ?>
           <li><a class="nav-link scrollto" href="myOrders.php">My Orders</a></li>
           <li><a class="nav-link scrollto" href="myCarts.php">My Carts</a></li>
           <li><a class="nav-link scrollto" href="contact.php">Contact</a></li>
+          <?php }elseif($_SESSION['role']==1){
+            ?>
+             <li><a class="nav-link scrollto" href="manage-admin.php">Admin</a></li>
+            <li><a class="nav-link scrollto" href="manage-category.php">Category</a></li>
+            <li><a class="nav-link scrollto" href="manage-order.php">Orders</a></li>
+            <?php
+          } ?>
           <li><a class="nav-link scrollto" href="logout.php">Logout</a></li>
           
         </ul>
