@@ -5,7 +5,7 @@ include('./config/constant.php');
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Restaurantly Bootstrap Template - Index</title>
+  <title>Clan-Booyah</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -60,7 +60,7 @@ include('./config/constant.php');
   <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="home.php">Restaurantly</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="home.php">Welcome!!</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 

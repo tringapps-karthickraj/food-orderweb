@@ -2,7 +2,10 @@
 include('header.php');
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $sql="SELECT myorders.total as total, myorders.order_date as date, myorders.status as status, myorders.customer_name as customer_name, myorders.customer_contact as contact, myorders.customer_email as email, myorders.customer_address as address, orders.quandity as quandity, food.title as title, food.price as price, admin.name as username FROM `myorders` inner join orders on orders.order_id=myorders.id INNER JOIN food on food.id =orders.food_id INNER JOIN admin on admin.id = myorders.customer_id WHERE myorders.id = '$id'";
+    $sql="SELECT myorders.total as total, myorders.order_date as date, myorders.status as status, myorders.customer_name as customer_name, myorders.customer_contact as contact, myorders.customer_email as email, myorders.customer_address as address, orders.quandity as quandity, food.title as title, food.price as price, admin.name as username FROM `myorders` inner join 
+    orders on orders.order_id=myorders.id INNER JOIN 
+    food on food.id =orders.food_id INNER JOIN 
+    admin on admin.id = myorders.customer_id WHERE myorders.id = '$id'";
     $res=mysqli_query($conn,$sql);
     $sql2="SELECT myorders.total as total, myorders.order_date as date, myorders.status as status, myorders.customer_name as customer_name, myorders.customer_contact as contact, myorders.customer_email as email, myorders.customer_address as address, orders.quandity as quandity, food.title as title, food.price as price, admin.name as username FROM `myorders` inner join orders on orders.order_id=myorders.id INNER JOIN food on food.id =orders.food_id INNER JOIN admin on admin.id = myorders.customer_id WHERE myorders.id = '$id'";
     $res2=mysqli_query($conn,$sql2);
@@ -88,7 +91,7 @@ if(isset($_GET['id'])){
                       </div>
                       <div class="col-lg-8">
                       <?php 
-                      echo $row['status'];
+                      echo $status;
                       ?>
                       </div>
                       <div class="col-lg-4">

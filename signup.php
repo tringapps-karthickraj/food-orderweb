@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login 10</title>
+  	<title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,12 +12,13 @@
 	<link rel="stylesheet" href="./assets/css/style-1.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<body class="img js-fullheight" style="background-image: url(images/hero-bg.jpg); min-height: 100vh;
+  overflow: hidden;">
 	<section class="">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #10</h2>
+					<h2 class="heading-section">Register to Continue</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
