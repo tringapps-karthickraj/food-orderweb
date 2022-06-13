@@ -25,28 +25,19 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
-		      	<form action="login2.php" method="POST" class="signin-form">
+				<h6  class="mb-4 text-center mess" id="mess">Incorrect username & password</h6>
+		      	<form action="login2.php" method="POST" id="signinform" class="signin-form" >
 		      		<div class="form-group">
-		      			<input type="email" class="form-control" name="email" placeholder="Email" required>
+		      			<input type="email" id="email" class="form-control" name="email" placeholder="Email" required>
 		      		</div>
 	            <div class="form-group">
-	              <input id="password-field" type="password" class="form-control" name="password" placeholder="Password" required>
+	              <input id="password-field"  type="password" class="form-control" name="password" placeholder="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 	            <div class="form-group">
-	            	<button type="submit"  name="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+	            	<button type="submit"  class="form-control btn btn-primary submit px-3">Sign In</button>
 	            </div>
-	            <!-- <div class="form-group d-md-flex">
-	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
-								</div>
-								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Forgot Password</a>
-								</div>
-	            </div> -->
+	            
 	          </form>
 	          <p class="w-100 text-center">&mdash; Or Signup  &mdash;</p>
 	          <div class="social d-flex text-center">
@@ -59,10 +50,34 @@
 		</div>
 	</section>
 
-	<!-- <script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>-->
+	
   <script src="assets/js/pass.js"></script> 
+ <script type="text/javascript">
+
+var msg =document.getElementById("mess");
+jQuery($ => {
+  $('form').on('submit', e => {
+	msg.style.display="none";
+	let email=document.getElementById('email').value;
+ 	let password=document.getElementById('password-field').value;
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "verifyuser.php",
+      data: { email:email,password:password },
+      success: function(res) {
+        if (res == 'ok') {
+			msg.style.display="none";
+		  e.target.submit(); // rule met, allow form submission
+        } else {
+			msg.style.display="block";
+        }
+      }
+    });
+  });
+});
+
+ </script>
 
 	</body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 include('./config/signupconstant.php');
-        if(isset($_POST['submit'])){
+print_r($_POST);
+        
             $email = $_POST['email'];
             $password = md5($_POST['password']);
             $sql = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
@@ -23,5 +24,5 @@ include('./config/signupconstant.php');
        // $_SESSION['login'] = "<div class='error text-centre'>Username and Password did not match.</div>";
           header('location:login1.php');
       }
-        }
+        
         ?>
