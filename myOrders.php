@@ -53,10 +53,10 @@ $count1=mysqli_num_rows($res1);
                 <?php echo $row1['quandity']; ?>
                 </div>
                 <div class="col-lg-3">
-                <?php echo $row1['price']; ?>
+                <?php echo $row1['priceperqty']; ?>
                 </div>
                 <div class="col-lg-3">
-                <?php echo $row1['quandity'] * $row1['price']; ?>
+                <?php echo $row1['quandity'] * $row1['priceperqty']; ?>
                 </div>
                 </div>
                 <?php
