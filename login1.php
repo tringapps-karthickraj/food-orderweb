@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login 10</title>
+  	<title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -12,12 +12,13 @@
     <link href="assets/css/style-1.css" rel="stylesheet">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+	<body class="img js-fullheight" style="background-image: url(images/hero-bg.jpg); min-height: 100vh;
+  overflow: hidden;">
 	<section class="">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #10</h2>
+					<h2 class="heading-section">Login</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -35,7 +36,7 @@
 	            <div class="form-group">
 	            	<button type="submit"  name="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
 	            </div>
-	            <div class="form-group d-md-flex">
+	            <!-- <div class="form-group d-md-flex">
 	            	<div class="w-50">
 		            	<label class="checkbox-wrap checkbox-primary">Remember Me
 									  <input type="checkbox" checked>
@@ -45,7 +46,7 @@
 								<div class="w-50 text-md-right">
 									<a href="#" style="color: #fff">Forgot Password</a>
 								</div>
-	            </div>
+	            </div> -->
 	          </form>
 	          <p class="w-100 text-center">&mdash; Or Signup  &mdash;</p>
 	          <div class="social d-flex text-center">

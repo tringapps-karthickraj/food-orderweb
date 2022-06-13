@@ -19,32 +19,32 @@ include('header.php');
       <div class="row mt-5">
 
         <div class="col-lg-4">
-          <div class="info">
+        <div class="info">
             <div class="address">
               <i class="bi bi-geo-alt"></i>
               <h4>Location:</h4>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <p>Madurai</p>
             </div>
 
             <div class="open-hours">
               <i class="bi bi-clock"></i>
               <h4>Open Hours:</h4>
               <p>
-                Monday-Saturday:<br>
-                11:00 AM - 2300 PM
+                Monday-Sunday:<br>
+                11:00 AM - 12:30 PM
               </p>
             </div>
 
             <div class="email">
               <i class="bi bi-envelope"></i>
               <h4>Email:</h4>
-              <p>info@example.com</p>
+              <p>booyah@gmail.com</p>
             </div>
 
             <div class="phone">
               <i class="bi bi-phone"></i>
               <h4>Call:</h4>
-              <p>+1 5589 55488 55s</p>
+              <p>1234567890</p>
             </div>
 
           </div>
@@ -65,14 +65,14 @@ include('header.php');
             <div class="form-group mt-3">
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
             </div>
-            <div class="form-group mt-3">
+            <!-- <div class="form-group mt-3">
               <select  class="form-control" name="concerned_department" id="concerned_department" placeholder="" required>
               <option value="">Select a Department</option>
                   <option value="billing">Billing</option>
                   <option value="marketing">Marketing</option>
                   <option value="technical support">Technical Support</option>
                   </select>
-            </div>
+            </div> -->
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="8" placeholder="Message" required></textarea>
             </div>
