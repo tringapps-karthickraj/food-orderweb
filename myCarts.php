@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 $cusid=$_SESSION['id'];
-$sql="SELECT carts.id as carts_id, carts.quandity as quandity,food.title as title, food.price as price FROM carts INNER JOIN food ON carts.food_id = food.id WHERE carts.customer_id='$cusid'";
+$sql="SELECT carts.id as carts_id, carts.quandity as quandity,food.title as title, carts.priceperqty as price FROM carts INNER JOIN food ON carts.food_id = food.id WHERE carts.customer_id='$cusid'";
 $res=mysqli_query($conn, $sql);
 $totalall =0;
 

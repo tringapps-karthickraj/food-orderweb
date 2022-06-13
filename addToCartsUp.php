@@ -3,7 +3,7 @@ include('header.php');
 if(isset($_GET['cart_id']))
 {
     $cart_id=$_GET['cart_id'];
-    $sql="SELECT carts.id as cart_id, carts.quandity as quandity, food.title as title, food.price as price, food.image_name as image_name  FROM carts INNER JOIN food ON carts.food_id = food.id  WHERE carts.id='$cart_id'";
+    $sql="SELECT carts.id as cart_id, carts.quandity as quandity, food.title as title, carts.priceperqty as price, food.image_name as image_name  FROM carts INNER JOIN food ON carts.food_id = food.id  WHERE carts.id='$cart_id'";
     $res=mysqli_query($conn, $sql);
     $row=mysqli_fetch_assoc($res);
     

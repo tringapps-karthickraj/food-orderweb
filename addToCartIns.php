@@ -7,10 +7,11 @@ if(isset($_POST['submit']))
                        $sqlty=$_POST['qty'];
                        $food_id=$_POST['food_id'];
                        $customer_id=$_SESSION['id'];     
-                  
+                  $price=$_POST['price'];
                        $sql2="INSERT INTO carts SET
                            food_id='$food_id',
                            quandity=$sqlty,
+                           priceperqty='$price',
                            customer_id='$customer_id'";
                    
                     //   echo $sql2; 
