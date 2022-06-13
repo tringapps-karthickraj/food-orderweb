@@ -56,27 +56,7 @@ if($res==TRUE)
                 <div class="col-lg-4">
      <button class="btn-admin"><a style="color: white;" href="update-password.php?id=<?php echo $id; ?>" >Change Password</a></button>
      <button class="btn-admin"><a style="color: white;" href="update-admin.php?id=<?php echo $id; ?>" >Update Admin</a></button>
-     <button class="btn-admin" onclick="modalOpen();">Delete Admin</button>
-     <div id="myModal" class="modal">
-
-<!-- Modal content -->
-<div class="modal-content">
-  <div class="modal-header">
- 
-    <span class="close" >&times;</span>
-   
-  </div>
-  <div class="modal-body">
-  <h6 class="canceltxt">Are you sure to delete the admin ?</h6>
-          <div class="row">
-              <div class="col-6"><button class="cancelbtn closem"><a style="color: white;" href="delete-admin.php?id=<?php echo $id; ?>">yes</a></button></div>
-              <div class="col-6"><button class="cancelbtn closem" >No</button></div>
-          </div>
-  </div>
-  
-</div>
-
-</div>
+     <button class="btn-admin"><a style="color: white;" href="delete-admin.php?id=<?php echo $id; ?>" >Delete Admin</a></button>
 </div>  
               </div>
 
@@ -90,43 +70,6 @@ if($res==TRUE)
 
       </div>
     </section><!-- End Menu Section -->
-    <script type="text/javascript">
-      // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-var closebtn=document.getElementsByClassName("closem")[0];
-// When the user clicks the button, open the modal 
-
-
-function modalOpen() {
-    modal.style.display = "block";
-}
-// function modalClose(){
-//   modal.style.display = "none";
-// }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-closebtn.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-    </script>
 <?php
 include('footer.php');
 ?>
