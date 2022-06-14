@@ -2,12 +2,9 @@
 include('header.php');
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $sql="SELECT myorders.total as total, myorders.order_date as date, myorders.status as status, myorders.customer_name as customer_name, myorders.customer_contact as contact, myorders.customer_email as email, myorders.customer_address as address, orders.quandity as quandity, food.title as title, food.price as price, admin.name as username FROM `myorders` inner join 
-    orders on orders.order_id=myorders.id INNER JOIN 
-    food on food.id =orders.food_id INNER JOIN 
-    admin on admin.id = myorders.customer_id WHERE myorders.id = '$id'";
+    $sql="SELECT myorders.total as total, myorders.order_date as date, myorders.status as status, myorders.customer_name as customer_name, myorders.customer_contact as contact, myorders.customer_email as email, myorders.customer_address as address, orders.quandity as quandity, food.title as title, orders.priceperqty as price, admin.name as username FROM `myorders` inner join orders on orders.order_id=myorders.id INNER JOIN food on food.id =orders.food_id INNER JOIN admin on admin.id = myorders.customer_id WHERE myorders.id = '$id'";
     $res=mysqli_query($conn,$sql);
-    $sql2="SELECT myorders.total as total, myorders.order_date as date, myorders.status as status, myorders.customer_name as customer_name, myorders.customer_contact as contact, myorders.customer_email as email, myorders.customer_address as address, orders.quandity as quandity, food.title as title, food.price as price, admin.name as username FROM `myorders` inner join orders on orders.order_id=myorders.id INNER JOIN food on food.id =orders.food_id INNER JOIN admin on admin.id = myorders.customer_id WHERE myorders.id = '$id'";
+    $sql2="SELECT myorders.total as total, myorders.order_date as date, myorders.status as status, myorders.customer_name as customer_name, myorders.customer_contact as contact, myorders.customer_email as email, myorders.customer_address as address, orders.quandity as quandity, food.title as title, orders.priceperqty as price, admin.name as username FROM `myorders` inner join orders on orders.order_id=myorders.id INNER JOIN food on food.id =orders.food_id INNER JOIN admin on admin.id = myorders.customer_id WHERE myorders.id = '$id'";
     $res2=mysqli_query($conn,$sql2);
             //Get teh value based on query executed
             $row= mysqli_fetch_assoc($res);
@@ -98,6 +95,7 @@ if(isset($_GET['id'])){
                       Total
                       </div>
                       <div class="col-lg-8">
+                      ₹
                       <?php 
                       echo $row['total'];
                       ?>
@@ -133,7 +131,7 @@ if(isset($_GET['id'])){
                 <div class="col-lg-4"><?php echo $row1['title']; ?></div>
                 <div class="col-lg-2"><?php echo $row1['quandity']; ?></div>
                 <div class="col-lg-2">₹ <?php echo $row1['price']; ?></div>
-                <div class="col-lg-2"><?php echo $row1['quandity']*$row1['price']; ?></div>  
+                <div class="col-lg-2">₹ <?php echo $row1['quandity']*$row1['price']; ?></div>  
               </div>
 
               <?php

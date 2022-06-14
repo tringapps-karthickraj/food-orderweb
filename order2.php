@@ -26,8 +26,8 @@ if(isset($_POST['submit']))
                        {
                         $last_id = $conn->insert_id;
 
-                        $insert="INSERT INTO orders (food_id, quandity, order_id)
-                        SELECT food_id, quandity, $last_id FROM carts WHERE customer_id = '$customer_id';
+                        $insert="INSERT INTO orders (food_id, quandity, order_id,priceperqty)
+                        SELECT food_id, quandity, $last_id, priceperqty FROM carts WHERE customer_id = '$customer_id';
                         DELETE FROM carts WHERE customer_id='$customer_id'";
                         
                         $res2=mysqli_multi_query($conn, $insert);  

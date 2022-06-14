@@ -14,11 +14,6 @@ include('header.php');
             <div class="row mb-4" >
             <div class="col-lg-2">S.No</div>
             <div class="col-lg-2">Order id</div>
-            <!-- <div class="col-lg-3">Username</div>
-            <div class="col-lg-2">Customer name</div>
-            <div class="col-lg-4">Contact</div>
-            <div class="col-lg-4">Email</div>
-            <div class="col-lg-4">Address</div> -->
             <div class="col-lg-2">Total</div>
             <div class="col-lg-2">Status</div>
             <div class="col-lg-4">Action</div>
@@ -61,7 +56,7 @@ if($res==TRUE)
               <div class="row admintablefont">
                 <div class="col-lg-2"><?php echo $sn++ ;?></div>
                 <div class="col-lg-2"><?php echo $rows['id']; ?></div>
-                <div class="col-lg-2"><?php echo $rows['total']; ?></div>
+                <div class="col-lg-2">₹ <?php echo $rows['total']; ?></div>
                 <div class="col-lg-2"><?php echo $status; ?></div>
                 <div class="col-lg-4">
      <button class="btn-admin"><a style="color: white;" href="vieworders.php?id=<?php echo $id; ?>" >View more</a></button>

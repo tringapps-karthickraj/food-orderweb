@@ -42,6 +42,7 @@ else
               <div>
               <label><?php echo $title; ?></label>
               <input type="hidden" name="food_id"value="<?php echo $food_id?>">
+              <input type="hidden" name="price"value="<?php echo $price?>">
               </div>
               <div>
               <p class="food-price">₹<span id="prize-food"><?php echo $price ?></span></p>
