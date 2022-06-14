@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2022 at 03:36 AM
+-- Generation Time: Jun 14, 2022 at 05:52 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -42,7 +42,6 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `name`, `role`, `password`, `email`, `phone`) VALUES
-(27, 'karthi', 1, 'b678c60ee60fd4374df211724aedf4f7', 'karthi@gmail.com', '1234567890'),
 (30, 'raj', 2, '65a1223dae83b8092c4edba0823a793c', NULL, NULL),
 (32, 'meow', 2, '4a4be40c96ac6314e91d93f38043a634', NULL, NULL),
 (33, 'anu', 2, '89a4b5bd7d02ad1e342c960e6a98365c', NULL, NULL),
@@ -65,6 +64,7 @@ CREATE TABLE `carts` (
   `customer_id` int(11) DEFAULT NULL,
   `food_id` int(11) DEFAULT NULL,
   `quandity` int(11) DEFAULT NULL,
+  `priceperqty` varchar(50) DEFAULT NULL,
   `datetime` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -131,7 +131,7 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`id`, `title`, `description`, `price`, `image_name`, `category_id`, `featured`, `active`, `created_by`, `updated_by`) VALUES
-(6, 'Boiled MOMO', 'Enjoy the plate of MoMo \r\nwith the stuffed fresh chicken, garlic, and the flavours of spicy masala', '100', 'Food-Name-8987.jpg', 6, '1', '1', NULL, NULL),
+(6, 'Boiled MOMO', 'Enjoy the plate of MoMo \r\nwith the stuffed fresh chicken, garlic, and the flavours of spicy masala', '105', 'Food-Name-8987.jpg', 6, '1', '1', NULL, 27),
 (7, 'Fried MoMos', 'Veg stuffed Fried MoMos which is fully veggie lodded and spicy masalas and garnished with the real taste of Indian Spices.', '150', 'Food-Name-4159.jpg', 0, '1', '1', NULL, NULL),
 (8, 'Taiwan Pizza', ' Try out the spicy Taiwan Pizza first time in India, with the thin layer of crust and complete taste of pizza .', '445', 'Food-Name-6687.jpg', 6, '1', '1', NULL, NULL),
 (9, 'Burger', 'Try out this amazing large size burger for the with loaded cheese...\r\n', '300', 'Food-Name-2546.jpg', 6, '1', '1', NULL, NULL),
@@ -171,12 +171,10 @@ CREATE TABLE `myorders` (
 --
 
 INSERT INTO `myorders` (`id`, `total`, `order_date`, `status`, `customer_id`, `customer_name`, `customer_contact`, `customer_email`, `customer_address`, `cancel_reason`) VALUES
-(1, 1200, '2022-05-27 23:55:25', 2, 38, 'karthi', '1234567890', 'kkarthickraj2k1@gmail.com', 'qww', NULL),
-(2, 120, '2022-05-28 01:32:57', 3, 38, 'karthi', '1234567890', 'kkarthickraj2k1@gmail.com', 'qwqw', 'qwqqqww'),
-(3, 450, '2022-05-27 23:19:41', 0, 38, 'karthi', '1234567890', 'kr@gmail.com', 'sdsd', NULL),
-(4, 1335, '2022-05-27 23:19:41', 0, 38, 'karthi', '1234567890', 'kkarthickraj2k1@gmail.com', 'sfefer', NULL),
-(5, 300, '2022-05-27 23:19:41', 0, 38, 'kr', '1234567890', 'kr@gmail.com', 'sasas', NULL),
-(6, 595, '2022-05-27 23:19:41', 0, 38, 'priya', '1234567890', 'priya@gmail.com', 'sdsd', NULL);
+(1, 200, '2022-06-13 14:57:07', 2, 38, 'kr', '1234567890', 'kr@gmail.com', 'asasasas', NULL),
+(2, 315, '2022-06-13 15:04:52', 3, 38, 'karthi', '1234567890', 'kr@gmail.com', 'asas', 'asasssssssssssssssss'),
+(3, 105, '2022-06-13 18:50:52', 3, 38, 'kr', '1234567890', 'kr@gmail.com', 'jj', 'as'),
+(4, 105, '2022-06-13 19:11:45', 3, 38, 'karthi', '1234567890', 'kr@gmail.com', 'asa', 'asas');
 
 -- --------------------------------------------------------
 
@@ -188,25 +186,19 @@ CREATE TABLE `orders` (
   `id` int(20) NOT NULL,
   `order_id` int(11) DEFAULT NULL,
   `food_id` varchar(40) DEFAULT NULL,
-  `quandity` varchar(40) DEFAULT NULL
+  `quandity` varchar(40) DEFAULT NULL,
+  `priceperqty` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `order_id`, `food_id`, `quandity`) VALUES
-(1, 1, '6', '5'),
-(2, 1, '7', '3'),
-(3, 1, '10', '5'),
-(4, 2, '18', '1'),
-(5, 3, '14', '3'),
-(6, 3, '11', '2'),
-(7, 4, '8', '3'),
-(8, 5, '7', '2'),
-(9, 6, '6', '1'),
-(10, 6, '8', '1'),
-(11, 6, '10', '1');
+INSERT INTO `orders` (`id`, `order_id`, `food_id`, `quandity`, `priceperqty`) VALUES
+(1, 1, '6', '2', '100'),
+(2, 2, '6', '3', '105'),
+(3, 3, '6', '1', '105'),
+(4, 4, '6', '1', '105');
 
 --
 -- Indexes for dumped tables
@@ -262,7 +254,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -280,13 +272,13 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `myorders`
 --
 ALTER TABLE `myorders`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
