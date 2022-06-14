@@ -66,7 +66,7 @@ include('./config/constant.php');
 
       <nav id="navbar" class="navbar order-last order-lg-0 navcenter">
         <ul>
-          <li><a class="nav-link scrollto active" href="home.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="home.php">Home</a></li>
           <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
           <li><a class="nav-link scrollto" href="food.php">Menu</a></li>
           <!-- <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
